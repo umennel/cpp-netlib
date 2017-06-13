@@ -6,6 +6,10 @@
 
 include_directories(${CPP-NETLIB_SOURCE_DIR} ${gtest_SOURCE_DIR}/include)
 
+if (MSVC)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /bigobj")
+endif()
+
 # add_subdirectory(uri)
 add_subdirectory(http)
 
